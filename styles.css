@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar, .click-area, .score-display {
+    padding: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.click-area {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://cdn.vectorstock.com/i/750p/08/48/doodle-drawing-women-breast-cancer-vector-32020848.avif');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer; /* Muudame kogu ala klikitavaks */
+}
+
+.score-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #444;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #333;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.purchased {
+    background-color: #333;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.click-area {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://cdn.vectorstock.com/i/750p/08/48/doodle-drawing-women-breast-cancer-vector-32020848.avif');
+    background-size: cover;
+    background-position: right;
+    cursor: pointer;
+    transition: background-position 0.5s, background-size 0.5s;
+    position: relative;
+}
+
+.single-boob {
+    background-position: right;
+    background-size: 200%;
+}
+
+.double-boob {
+    background-position: center;
+    background-size: cover;
+}
+
+/* Styles the overlay image */
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 120%; /* Adjust size as needed */
+    pointer-events: none; /* Prevents the overlay from blocking clicks */
+}
+
+/* Styles the clickable text */
+#grabText {
+    position: absolute;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Ensures text doesn’t interfere with clicks */
+}
+
+/* Disables text selection */
+body {
+    -webkit-user-select: none; /* Chrome, Safari, Edge */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* Standard syntax */
+}
